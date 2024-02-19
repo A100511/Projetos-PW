@@ -1,7 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Rodrigo Esteves teste
 Rui Silva teste 2
 teste 3
 =======
 Rodrigo Esteves testea
 >>>>>>> 6d97c86033becaed105afb7ab192cd944f7fe079
+=======
+Rodrigo Esteves testea
+Miguel Castro teste
+>>>>>>> 17f1f1fa770907154ad79a057ef05081cb3a6ac8
