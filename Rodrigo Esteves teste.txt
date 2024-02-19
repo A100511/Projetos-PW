@@ -6,4 +6,8 @@ Rodrigo Esteves testea
 Miguel Castro teste
 RUi  teste 4
 miguel update novo
+<<<<<<< HEAD
 test sttings
+=======
+duarte update
+>>>>>>> 7112616c38d5feb7ecc5d10e60858fb7f5d5b5bc
